@@ -1,0 +1,5 @@
+.vs
+/dist
+bin/
+obj/
+*.csproj.user

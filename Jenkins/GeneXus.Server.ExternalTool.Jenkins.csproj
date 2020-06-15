@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <AssemblyName>GeneXus.Server.ExternalTool.Jenkins</AssemblyName>
+    <RootNamespace>GeneXus.Server.ExternalTool.Jenkins</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutDir>$(GX_SERVER_DIR)\BinGenexus</OutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Result.cs" />
+    <Compile Remove="Results.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExternalTool\GeneXus.Server.ExternalTool.csproj" />
+  </ItemGroup>
+
+</Project>
