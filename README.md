@@ -7,6 +7,20 @@ An example of the implementation of the intermediate software for the communicat
 
 The Event Dispatcher extension (installed on GX Server) is what listens to the commits of the KB an calls this intermediate software.
 
+## Repository structure:
+
+- GeneXus.Server.ExternalTool (it's the interface and should not be changed)
+- GeneXus.Server.ExternalTool.Jenkins (implementation)
+
+## Requirements
+
+ - .NET Framework 4.7.1 or upper
+
+## How to compile
+
+ - Do a checkout
+ - Check the .csproj file where it detemines where the compiled dll will be copied. In order to debug or run this solution the compiled dll has to be under the 
+$(GX_SERVER_DIR)\BinGenexus folder.
 
 ## About Event Dispatcher extension
 
