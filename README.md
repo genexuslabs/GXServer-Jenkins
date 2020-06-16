@@ -16,9 +16,8 @@ The Event Dispatcher extension (installed on GX Server) is what listens to the c
 
  - .NET Framework 4.7.1 or upper
 
-## How to compile
+## How to build the solution
 
- - Do a checkout
  - Check the .csproj file where it detemines where the compiled dll will be copied. In order to debug or run this solution the compiled dll has to be under the 
 $(GX_SERVER_DIR)\BinGenexus folder.
 
