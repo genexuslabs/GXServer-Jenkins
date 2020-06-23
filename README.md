@@ -1,4 +1,4 @@
-# GXserver-Jenkins-Commit-Hooker
+# GXserver-Jenkins-Commit-Hook
 GXServer-Jenkins
 
 ## This repository contains:
