@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExternalTool\GeneXus.Server.ExternalTool.csproj" />
+    <Reference Include="GeneXus.Server.ExternalTool">
+      <HintPath>$(GX_SDK_DIR)\BinServer\GeneXus.Server.ExternalTool.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
