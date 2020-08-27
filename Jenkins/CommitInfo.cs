@@ -8,12 +8,11 @@ using System.Text.RegularExpressions;
 
 namespace GeneXus.Server.ExternalTool.Jenkins
 {
-    public class InfoCommitData : CommitData
+    public class InfoCommitData 
     {
         public InfoCommitData(CommitData commit)
-            : base(commit.User, commit.CommitDate, commit.KBName, commit.CommitId, commit.Objects, commit.Comment)
         {
-         ParseComments();
+            ParseComments(commit);
         }
 
         public CommitInfo CommitInformation
@@ -42,11 +41,11 @@ namespace GeneXus.Server.ExternalTool.Jenkins
             }
 
         } 
-    private void ParseComments()
+    private void ParseComments(CommitData commit)
     {
         try
         {
-                CommitInformation = GetCommitInfo();
+                CommitInformation = GetCommitInfo(commit);
         }
         catch
         {
@@ -55,14 +54,14 @@ namespace GeneXus.Server.ExternalTool.Jenkins
 
     }
 
-    private CommitInfo GetCommitInfo()
+    private CommitInfo GetCommitInfo(CommitData commit)
     {
         try
          {
 
                 CommitInfo CommitInformation = new CommitInfo();
                 Regex rx = new Regex(@"(?i)(#build:(?<build>[yes|y]))");
-                MatchCollection matches = rx.Matches(Comment);
+                MatchCollection matches = rx.Matches(commit.Comment);
                 foreach (Match match in matches)
                 {
                     GroupCollection groups = match.Groups;
@@ -71,7 +70,7 @@ namespace GeneXus.Server.ExternalTool.Jenkins
                 }
 
                 Regex rxUser = new Regex(@"((?i)(#GXuser:(?<gxuser>[\w]*$)))");
-                MatchCollection matchesuser = rxUser.Matches(Comment);
+                MatchCollection matchesuser = rxUser.Matches(commit.Comment);
                 foreach (Match match in matchesuser)
                 {
                     GroupCollection groups = match.Groups;
